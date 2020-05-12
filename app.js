@@ -7,8 +7,8 @@ function onReady() {
     if (!newToDoText.value) { return; }
     toDos.push({
      title: newToDoText.value,
-     complete: false
-     id: id.variable
+     complete: false,
+     id: id
    });
    newToDoText.value = '';
    renderTheUI();
@@ -27,7 +27,7 @@ function renderTheUI() {
         toDoList.appendChild(newLi);
         newLi.appendChild(checkbox);
    });
-   let deleteButtion = document.createElement('button');
+   let deleteButton = document.createElement('button');
       deleteButton.textContent = "Delete";
       deleteButton.addEventListener('click', function(event){
         toDoList.removeChild(this.parentElement);
